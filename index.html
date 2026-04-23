@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英语启蒙 · 每日情景对话</title>
+  <meta name="description" content="家庭英语启蒙每日情景对话学习工具">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated background blobs -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="app-layout">
+    <!-- Left sidebar: week overview -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">🌱</span>
+          <div>
+            <div class="logo-title">英语启蒙</div>
+            <div class="logo-sub">每日情景对话</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="week-label" id="weekLabel">本周计划</div>
+      <nav class="day-nav" id="dayNav">
+        <!-- JS renders day items here -->
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="streak-badge" id="streakBadge">
+          <span class="streak-fire">🔥</span>
+          <span class="streak-count" id="streakCount">0</span>
+          <span class="streak-text">天连续打卡</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- Top bar -->
+      <header class="top-bar">
+        <div class="date-chip" id="dateChip">
+          <span class="date-icon">📅</span>
+          <span id="dateText"></span>
+        </div>
+        <div class="scene-badge" id="sceneBadge">
+          <span id="sceneIcon"></span>
+          <span id="sceneText"></span>
+        </div>
+      </header>
+
+      <!-- Content grid -->
+      <div class="content-grid" id="contentArea">
+        <!-- Hero card: Scene icon + title -->
+        <section class="hero-card glass-card" id="heroCard">
+          <div class="hero-icon" id="heroIcon">☀️</div>
+          <h1 class="hero-title" id="heroTitle">早上见面</h1>
+          <p class="hero-desc" id="heroDesc">和家人打招呼，开启美好的一天</p>
+        </section>
+
+        <!-- Dialogs card -->
+        <section class="dialogs-card glass-card" id="dialogsCard">
+          <div class="card-label">
+            <span class="label-dot"></span>
+            今日对话
+          </div>
+          <div class="dialogs-list" id="dialogsList">
+            <!-- JS renders dialogs here -->
+          </div>
+        </section>
+
+        <!-- Tips card -->
+        <section class="tips-card glass-card" id="tipsCard">
+          <div class="card-label">
+            <span class="label-dot tip-dot"></span>
+            练习提示
+          </div>
+          <div class="tips-content" id="tipsContent"></div>
+        </section>
+
+        <!-- Resources card -->
+        <section class="resources-card glass-card" id="resourcesCard">
+          <div class="card-label">
+            <span class="label-dot res-dot"></span>
+            配套资源
+          </div>
+          <div class="resources-list" id="resourcesList">
+            <!-- JS renders resources here -->
+          </div>
+        </section>
+
+        <!-- Check-in card -->
+        <section class="checkin-card glass-card" id="checkinCard">
+          <div class="card-label">
+            <span class="label-dot check-dot"></span>
+            今日打卡
+          </div>
+          <div class="checkin-items">
+            <div class="checkin-item" id="check-read" onclick="toggleCheck('read')">
+              <div class="checkin-icon-wrap">
+                <div class="checkin-checkbox" id="checkbox-read"></div>
+              </div>
+              <div class="checkin-info">
+                <div class="checkin-label">跟读完成</div>
+                <div class="checkin-hint">大声跟读2-3遍</div>
+              </div>
+            </div>
+            <div class="checkin-item" id="check-apply" onclick="toggleCheck('apply')">
+              <div class="checkin-icon-wrap">
+                <div class="checkin-checkbox" id="checkbox-apply"></div>
+              </div>
+              <div class="checkin-info">
+                <div class="checkin-label">场景应用</div>
+                <div class="checkin-hint">在生活中使用一次</div>
+              </div>
+            </div>
+          </div>
+          <div class="checkin-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">0 / 2</span>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- No data state -->
+  <div class="empty-state" id="emptyState" style="display:none">
+    <div class="empty-icon">📭</div>
+    <div class="empty-title">暂无数据</div>
+    <div class="empty-desc">请检查 data.js 中的 currentDate 设置</div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
