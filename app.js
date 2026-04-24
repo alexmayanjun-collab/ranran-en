@@ -166,6 +166,7 @@ function renderContent() {
         <div class="bubble-content">
           <div class="bubble-role">${isParent ? '妈妈' : '宝宝'}</div>
           <div class="bubble-english">${d.english}</div>
+          ${d.phonetic ? `<div class="bubble-phonetic">${d.phonetic}</div>` : ''}
           <div class="bubble-chinese">${d.chinese}</div>
         </div>
       </div>

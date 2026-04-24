@@ -8,8 +8,8 @@ const englishData = {
     weekday: "周一",
     scene: "早上见面",
     dialogs: [
-      { english: "Good morning!", chinese: "早上好！" },
-      { english: "Good morning, Lily!", chinese: "早上好，莉莉！" }
+      { english: "Good morning!", chinese: "早上好！", phonetic: "/ɡʊd ˈmɔːrnɪŋ/" },
+      { english: "Good morning, Lily!", chinese: "早上好，莉莉！", phonetic: "/ɡʊd ˈmɔːrnɪŋ ˈlɪli/" }
     ],
     tip: "1. 站直身体，微笑\n2. 大声说，声音洪亮\n3. 说三遍",
     resources: [
@@ -22,8 +22,8 @@ const englishData = {
     weekday: "周二",
     scene: "出门",
     dialogs: [
-      { english: "Let's go!", chinese: "我们走吧！" },
-      { english: "OK, let's go!", chinese: "好的，我们走吧！" }
+      { english: "Let's go!", chinese: "我们走吧！", phonetic: "/lets ɡoʊ/" },
+      { english: "OK, let's go!", chinese: "好的，我们走吧！", phonetic: "/oʊˈkeɪ lets ɡoʊ/" }
     ],
     tip: "1. 背上小书包\n2. 挥挥手说Bye-bye\n3. 走到门口说",
     resources: [
@@ -35,8 +35,8 @@ const englishData = {
     weekday: "周三",
     scene: "吃饭",
     dialogs: [
-      { english: "Let's eat!", chinese: "我们吃饭吧！" },
-      { english: "Yummy! / Delicious!", chinese: "好吃！" }
+      { english: "Let's eat!", chinese: "我们吃饭吧！", phonetic: "/lets iːt/" },
+      { english: "Yummy! / Delicious!", chinese: "好吃！", phonetic: "/ˈjʌmi / dɪˈlɪʃəs/" }
     ],
     tip: "1. 坐好等一等\n2. 双手合十说\n3. 吃完夸妈妈",
     resources: [
@@ -48,8 +48,8 @@ const englishData = {
     weekday: "周四",
     scene: "谢谢",
     dialogs: [
-      { english: "Thank you!", chinese: "谢谢！" },
-      { english: "You're welcome!", chinese: "不客气！" }
+      { english: "Thank you!", chinese: "谢谢！", phonetic: "/θæŋk juː/" },
+      { english: "You're welcome!", chinese: "不客气！", phonetic: "/jʊr ˈwɛlkəm/" }
     ],
     tip: "1. 双手接过东西\n2. 鞠躬说Thank you\n3. 妈妈说不客气",
     resources: [
@@ -61,8 +61,8 @@ const englishData = {
     weekday: "周五",
     scene: "道歉",
     dialogs: [
-      { english: "Sorry!", chinese: "对不起！" },
-      { english: "It's OK!", chinese: "没关系！" }
+      { english: "Sorry!", chinese: "对不起！", phonetic: "/ˈsɔːri/" },
+      { english: "It's OK!", chinese: "没关系！", phonetic: "/ɪts oʊˈkeɪ/" }
     ],
     tip: "1. 轻轻拉对方手\n2. 低头说Sorry\n3. 拥抱一下",
     resources: [
@@ -74,8 +74,8 @@ const englishData = {
     weekday: "周六",
     scene: "赞美",
     dialogs: [
-      { english: "Good job!", chinese: "做得好！" },
-      { english: "Thank you!", chinese: "谢谢！" }
+      { english: "Good job!", chinese: "做得好！", phonetic: "/ɡʊd dʒɒb/" },
+      { english: "Thank you!", chinese: "谢谢！", phonetic: "/θæŋk juː/" }
     ],
     tip: "1. 完成后鼓掌\n2. 竖起大拇指\n3. 抱一抱",
     resources: [
@@ -87,8 +87,8 @@ const englishData = {
     weekday: "周日",
     scene: "晚安",
     dialogs: [
-      { english: "Good night!", chinese: "晚安！" },
-      { english: "Good night, sweet dreams!", chinese: "晚安，好梦！" }
+      { english: "Good night!", chinese: "晚安！", phonetic: "/ɡʊd naɪt/" },
+      { english: "Good night, sweet dreams!", chinese: "晚安，好梦！", phonetic: "/ɡʊd naɪt swiːt driːmz/" }
     ],
     tip: "1. 躺好盖被子\n2. 亲亲小脸蛋\n3. 轻轻说晚安",
     resources: [

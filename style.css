@@ -498,6 +498,15 @@ body {
   letter-spacing: 0.5px;
 }
 
+.bubble-phonetic {
+  font-size: 13px;
+  color: rgba(196,181,253,0.7);
+  font-weight: 400;
+  margin-bottom: 6px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
 .bubble-chinese {
   font-size: 14px;
   color: var(--text-secondary);
