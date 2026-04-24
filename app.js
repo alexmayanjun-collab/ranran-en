@@ -66,6 +66,16 @@ function renderSidebar() {
   document.getElementById('streakCount').textContent = streak;
 }
 
+// ===== Render mobile date picker =====
+function renderMobileDatePicker() {
+  const select = document.getElementById('dateSelectMobile');
+  select.innerHTML = allDates.map(dateKey => {
+    const d = englishData[dateKey];
+    const isSelected = dateKey === currentDate;
+    return `<option value="${dateKey}"${isSelected ? ' selected' : ''}>${d.weekday} · ${d.date}</option>`;
+  }).join('');
+}
+
 // ===== Render main content =====
 function renderContent() {
   const data = englishData[currentDate];
@@ -201,6 +211,7 @@ function switchDate(dateKey) {
   document.getElementById('checkbox-apply').textContent = '';
   renderSidebar();
   renderContent();
+  renderMobileDatePicker();
   // Re-trigger card animations
   document.querySelectorAll('.glass-card').forEach(el => {
     el.style.animation = 'none';
@@ -220,5 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   renderSidebar();
+  renderMobileDatePicker();
   renderContent();
 });

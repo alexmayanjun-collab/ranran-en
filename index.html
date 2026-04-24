@@ -49,6 +49,11 @@
     <main class="main-content">
       <!-- Top bar -->
       <header class="top-bar">
+        <div class="date-picker-mobile">
+          <select id="dateSelectMobile" onchange="switchDate(this.value)">
+          </select>
+          <span class="date-picker-arrow">▼</span>
+        </div>
         <div class="date-chip" id="dateChip">
           <span class="date-icon">📅</span>
           <span id="dateText"></span>
