@@ -161,7 +161,7 @@ function renderContent() {
     return `
       <div class="dialog-bubble" style="animation-delay: ${0.3 + i * 0.15}s">
         <div class="bubble-avatar ${isParent ? 'parent-av' : 'child-av'}">
-          ${isParent ? '👩' : '👧'}
+          ${isParent ? '👩' : '👦'}
         </div>
         <div class="bubble-content">
           <div class="bubble-role">${isParent ? '妈妈' : '宝宝'}</div>
