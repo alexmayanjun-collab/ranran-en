@@ -50,9 +50,14 @@
       <!-- Top bar -->
       <header class="top-bar">
         <div class="date-picker-mobile">
-          <select id="dateSelectMobile" onchange="switchDate(this.value)">
-          </select>
-          <span class="date-picker-arrow">▼</span>
+          <button class="date-picker-trigger" id="datePickerTrigger" onclick="toggleDatePicker()">
+            <span class="date-picker-icon">📅</span>
+            <span id="datePickerLabel"></span>
+            <span class="date-picker-chevron">▼</span>
+          </button>
+          <div class="date-picker-dropdown" id="datePickerDropdown">
+            <!-- JS renders day items here -->
+          </div>
         </div>
         <div class="date-chip" id="dateChip">
           <span class="date-icon">📅</span>

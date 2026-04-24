@@ -772,36 +772,171 @@ body {
 .date-picker-mobile {
   display: none;
   position: relative;
+  z-index: 50;
 }
 
-.date-picker-mobile select {
-  appearance: none;
-  -webkit-appearance: none;
+.date-picker-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 100px;
-  padding: 8px 32px 8px 14px;
+  padding: 8px 14px 8px 16px;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-primary);
   cursor: pointer;
-  min-width: 140px;
+  font-family: var(--font-sans);
+  transition: var(--transition-base);
 }
 
-.date-picker-mobile select:focus {
-  outline: none;
-  border-color: var(--accent-violet);
+.date-picker-trigger:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255,255,255,0.12);
 }
 
-.date-picker-arrow {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 10px;
+.date-picker-trigger.open {
+  background: var(--glass-hover);
+  border-color: rgba(139,92,246,0.3);
+  box-shadow: 0 0 16px rgba(139,92,246,0.15);
+}
+
+.date-picker-icon {
+  font-size: 15px;
+}
+
+.date-picker-chevron {
+  font-size: 9px;
   color: var(--text-muted);
-  pointer-events: none;
+  transition: transform 0.2s ease;
 }
+
+.date-picker-trigger.open .date-picker-chevron {
+  transform: rotate(180deg);
+}
+
+.date-picker-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 260px;
+  background: rgba(15,15,30,0.95);
+  backdrop-filter: blur(40px) saturate(1.5);
+  -webkit-backdrop-filter: blur(40px) saturate(1.5);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: var(--shadow-card);
+  animation: dropdownIn 0.2s ease-out;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.date-picker-dropdown.visible {
+  display: flex;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.date-picker-dropdown .dp-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-base);
+  position: relative;
+  user-select: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-sans);
+  font-size: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.date-picker-dropdown .dp-item:hover {
+  background: var(--glass-hover);
+}
+
+.date-picker-dropdown .dp-item.active {
+  background: rgba(139,92,246,0.15);
+}
+
+.date-picker-dropdown .dp-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 3px; height: 20px;
+  background: var(--accent-violet);
+  border-radius: 0 4px 4px 0;
+}
+
+.date-picker-dropdown .dp-dot {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  flex-shrink: 0;
+  transition: var(--transition-base);
+}
+
+.date-picker-dropdown .dp-item.active .dp-dot {
+  background: rgba(139,92,246,0.2);
+  border-color: rgba(139,92,246,0.4);
+  box-shadow: 0 0 12px rgba(139,92,246,0.2);
+}
+
+.date-picker-dropdown .dp-item.completed .dp-dot {
+  background: rgba(16,185,129,0.15);
+  border-color: rgba(16,185,129,0.3);
+}
+
+.date-picker-dropdown .dp-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.date-picker-dropdown .dp-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.date-picker-dropdown .dp-scene {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.date-picker-dropdown .dp-check {
+  font-size: 13px;
+  opacity: 0;
+  transition: var(--transition-base);
+}
+
+.date-picker-dropdown .dp-item.completed .dp-check {
+  opacity: 1;
+}
+
+/* Scrollbar for dropdown */
+.date-picker-dropdown::-webkit-scrollbar { width: 4px; }
+.date-picker-dropdown::-webkit-scrollbar-track { background: transparent; }
+.date-picker-dropdown::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 100px; }
 
 @media (max-width: 900px) {
   .date-picker-mobile { display: block; }

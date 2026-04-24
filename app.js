@@ -68,12 +68,69 @@ function renderSidebar() {
 
 // ===== Render mobile date picker =====
 function renderMobileDatePicker() {
-  const select = document.getElementById('dateSelectMobile');
-  select.innerHTML = allDates.map(dateKey => {
+  const dropdown = document.getElementById('datePickerDropdown');
+  const label = document.getElementById('datePickerLabel');
+  const trigger = document.getElementById('datePickerTrigger');
+
+  // Update trigger label
+  const currentData = englishData[currentDate];
+  if (currentData) {
+    label.textContent = `${currentData.weekday} · ${currentData.date}`;
+  }
+
+  // Render dropdown items
+  dropdown.innerHTML = allDates.map(dateKey => {
     const d = englishData[dateKey];
-    const isSelected = dateKey === currentDate;
-    return `<option value="${dateKey}"${isSelected ? ' selected' : ''}>${d.weekday} · ${d.date}</option>`;
+    const cfg = sceneConfig[d.scene] || { icon: "📝" };
+    const isActive = dateKey === currentDate;
+    const saved = localStorage.getItem('english-check-' + dateKey);
+    const isCompleted = saved ? JSON.parse(saved).every(v => v) : false;
+    const classes = ['dp-item'];
+    if (isActive) classes.push('active');
+    if (isCompleted) classes.push('completed');
+
+    return `
+      <button class="${classes.join(' ')}" onclick="switchDate('${dateKey}'); closeDatePicker();">
+        <div class="dp-dot">${cfg.icon}</div>
+        <div class="dp-info">
+          <div class="dp-name">${d.weekday} · ${d.scene}</div>
+          <div class="dp-scene">${dateKey}</div>
+        </div>
+        <div class="dp-check">${isCompleted ? '✅' : ''}</div>
+      </button>
+    `;
   }).join('');
+}
+
+// ===== Toggle date picker dropdown =====
+function toggleDatePicker() {
+  const dropdown = document.getElementById('datePickerDropdown');
+  const trigger = document.getElementById('datePickerTrigger');
+  const isVisible = dropdown.classList.contains('visible');
+  if (isVisible) {
+    closeDatePicker();
+  } else {
+    dropdown.classList.add('visible');
+    trigger.classList.add('open');
+  }
+}
+
+function closeDatePicker() {
+  const dropdown = document.getElementById('datePickerDropdown');
+  const trigger = document.getElementById('datePickerTrigger');
+  if (dropdown) dropdown.classList.remove('visible');
+  if (trigger) trigger.classList.remove('open');
+}
+
+// Close dropdown when clicking outside (registered on DOMContentLoaded)
+function initDatePickerOutsideClick() {
+  document.addEventListener('click', (e) => {
+    const dropdown = document.getElementById('datePickerDropdown');
+    const trigger = document.getElementById('datePickerTrigger');
+    if (dropdown && dropdown.classList.contains('visible') && !dropdown.contains(e.target) && !trigger.contains(e.target)) {
+      closeDatePicker();
+    }
+  });
 }
 
 // ===== Render main content =====
@@ -233,4 +290,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSidebar();
   renderMobileDatePicker();
   renderContent();
+  initDatePickerOutsideClick();
 });
