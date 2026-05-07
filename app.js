@@ -286,4 +286,3 @@ document.addEventListener('DOMContentLoaded', () => {
   renderContent();
   initDatePickerOutsideClick();
 });
-`,file_path:
