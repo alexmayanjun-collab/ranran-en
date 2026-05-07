@@ -1,5 +1,5 @@
-// 3个月（90天）学习计划生成器
-const startDate = "2026-05-07"; // 设置起始日期
+// 90天学习计划生成器 (固定路径模式)
+const startDate = "2026-05-07";
 
 function generateLearningPlan() {
   const plan = {};
@@ -10,8 +10,8 @@ function generateLearningPlan() {
     d.setDate(d.getDate() + i);
     const dateKey = d.toISOString().slice(0, 10);
     
-    // 循环复用课程库
-    const curriculumItem = curriculumLibrary[i % curriculumLibrary.length];
+    // 逻辑：前30天按顺序学习 MASTER_SCHEDULE，后续天数开始循环复习
+    const curriculumItem = MASTER_SCHEDULE[i % MASTER_SCHEDULE.length];
     
     plan[dateKey] = {
       date: `${d.getMonth() + 1}月${d.getDate()}日`,
