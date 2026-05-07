@@ -435,6 +435,25 @@ body {
   z-index: 1;
 }
 
+/* Words list */
+.words-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.word-tag {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 14px;
+  color: #a78bfa;
+  font-weight: 500;
+}
+
 /* ===== Dialogs Card ===== */
 .dialogs-card {
   grid-column: 1 / -1;

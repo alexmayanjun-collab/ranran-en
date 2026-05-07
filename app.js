@@ -154,6 +154,14 @@ function renderContent() {
   document.getElementById('heroTitle').textContent = data.scene;
   document.getElementById('heroDesc').textContent = cfg.desc;
 
+  // Words
+  const wordsEl = document.getElementById('wordsList');
+  if (data.words) {
+    wordsEl.innerHTML = data.words.map(w => `<span class="word-tag">${w}</span>`).join('');
+  } else {
+    wordsEl.innerHTML = '';
+  }
+
   // Dialogs
   const dialogsEl = document.getElementById('dialogsList');
   dialogsEl.innerHTML = data.dialogs.map((d, i) => {
