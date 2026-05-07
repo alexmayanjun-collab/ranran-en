@@ -1,6 +1,6 @@
-// 30天全不重复学习路径 (Master Vocabulary List)
+// 90天全不重复学习路径 (Master Vocabulary List)
 const MASTER_SCHEDULE = [
-  // 阶段 1: 晨起与家内活动 (Day 1-10)
+  // Month 1: 晨起、生活、基本交互 (Days 1-30)
   { scene: "早上问候", icon: "☀️", words: ["Morning /'mɔːnɪŋ/", "Sun /sʌn/"], dialogs: [{ english: "Good morning!", chinese: "早上好！" }, { english: "Wake up, baby!", chinese: "起床啦！" }], tip: "拉窗帘，迎接阳光" },
   { scene: "吃早餐", icon: "🥛", words: ["Milk /mɪlk/", "Bread /bred/"], dialogs: [{ english: "Drink your milk.", chinese: "喝牛奶。" }, { english: "Eat the bread.", chinese: "吃面包。" }], tip: "准备好健康早餐" },
   { scene: "刷牙洗脸", icon: "🪥", words: ["Brush /brʌʃ/", "Teeth /tiːθ/"], dialogs: [{ english: "Brush your teeth.", chinese: "刷牙。" }, { english: "Nice and clean.", chinese: "干净啦。" }], tip: "对着镜子一起刷" },
@@ -11,8 +11,28 @@ const MASTER_SCHEDULE = [
   { scene: "画画", icon: "🎨", words: ["Draw /drɔː/", "Color /'kʌlər/"], dialogs: [{ english: "Draw a circle.", chinese: "画个圆。" }, { english: "Use the red.", chinese: "用红色。" }], tip: "随意涂鸦" },
   { scene: "洗手", icon: "🧼", words: ["Soap /səʊp/", "Wash /wɒʃ/"], dialogs: [{ english: "Wash your hands.", chinese: "洗洗手。" }, { english: "Soap bubbles.", chinese: "洗手液泡泡。" }], tip: "数数洗手时间" },
   { scene: "晚安故事", icon: "🌙", words: ["Bed /bed/", "Sleep /sliːp/"], dialogs: [{ english: "Time for bed.", chinese: "睡觉时间到。" }, { english: "Sweet dreams.", chinese: "做个好梦。" }], tip: "轻声细语" },
+  { scene: "吃水果", icon: "🍎", words: ["Apple /'æpl/", "Yummy /'jʌmi/"], dialogs: [{ english: "Eat an apple.", chinese: "吃苹果。" }, { english: "It is sweet.", chinese: "它很甜。" }], tip: "切成小块" },
+  { scene: "系鞋带", icon: "👟", words: ["Shoes /ʃuːz/", "Tied /taɪd/"], dialogs: [{ english: "Put on shoes.", chinese: "穿鞋子。" }, { english: "Tied tight.", chinese: "系紧了。" }], tip: "示范动作" },
+  { scene: "戴帽子", icon: "🧢", words: ["Hat /hæt/", "Sun /sʌn/"], dialogs: [{ english: "Wear your hat.", chinese: "戴上帽子。" }, { english: "Sunny day.", chinese: "大晴天。" }], tip: "挡住阳光" },
+  { scene: "玩拼图", icon: "🧩", words: ["Piece /piːs/", "Fit /fɪt/"], dialogs: [{ english: "Find the piece.", chinese: "找碎片。" }, { english: "It fits!", chinese: "拼对了！" }], tip: "保持耐心" },
+  { scene: "擦嘴巴", icon: "🧻", words: ["Wipe /waɪp/", "Face /feɪs/"], dialogs: [{ english: "Wipe your mouth.", chinese: "擦擦嘴。" }, { english: "Clean face.", chinese: "脸干净了。" }], tip: "餐后习惯" },
+  { scene: "倒垃圾", icon: "🗑️", words: ["Trash /træʃ/", "Bin /bɪn/"], dialogs: [{ english: "Throw trash.", chinese: "扔垃圾。" }, { english: "In the bin.", chinese: "扔进桶里。" }], tip: "环保意识" },
+  { scene: "照镜子", icon: "🪞", words: ["Mirror /'mɪrər/", "Me /miː/"], dialogs: [{ english: "Look in mirror.", chinese: "照镜子。" }, { english: "That's me!", chinese: "那是我的。" }], tip: "做鬼脸" },
+  { scene: "玩小球", icon: "🎾", words: ["Round /raʊnd/", "Bounce /baʊns/"], dialogs: [{ english: "Round ball.", chinese: "圆球。" }, { english: "Watch it bounce.", chinese: "看它跳。" }], tip: "室内弹球" },
+  { scene: "梳头发", icon: "💇", words: ["Comb /kəʊm/", "Hair /heər/"], dialogs: [{ english: "Comb your hair.", chinese: "梳头发。" }, { english: "So neat.", chinese: "真整齐。" }], tip: "温柔梳理" },
+  { scene: "喝汤", icon: "🥣", words: ["Soup /suːp/", "Hot /hɒt/"], dialogs: [{ english: "Hot soup.", chinese: "热汤。" }, { english: "Blow it.", chinese: "吹一吹。" }], tip: "注意防烫" },
+  { scene: "看闹钟", icon: "⏰", words: ["Clock /klɒk/", "Time /taɪm/"], dialogs: [{ english: "Look, a clock.", chinese: "看，时钟。" }, { english: "What time?", chinese: "几点啦？" }], tip: "建立时间感" },
+  { scene: "数数", icon: "🔢", words: ["One /wʌn/", "Two /tuː/"], dialogs: [{ english: "Count one, two.", chinese: "数一数。" }, { english: "Counting is fun.", chinese: "数数真好玩。" }], tip: "数积木" },
+  { scene: "找玩具", icon: "🔍", words: ["Find /faɪnd/", "Toy /tɔɪ/"], dialogs: [{ english: "Find the toy.", chinese: "找玩具。" }, { english: "Found it!", chinese: "找到了！" }], tip: "捉迷藏" },
+  { scene: "整理玩具", icon: "📦", words: ["Box /bɒks/", "Put /pʊt/"], dialogs: [{ english: "Put in box.", chinese: "装进盒子。" }, { english: "All done.", chinese: "搞定。" }], tip: "归位训练" },
+  { scene: "换尿布", icon: "👶", words: ["Dry /draɪ/", "Fresh /freʃ/"], dialogs: [{ english: "Time to change.", chinese: "换个干净的。" }, { english: "Fresh now.", chinese: "干爽啦。" }], tip: "互动交流" },
+  { scene: "看月亮", icon: "🌝", words: ["Moon /muːn/", "Bright /braɪt/"], dialogs: [{ english: "The moon is up.", chinese: "月亮出来啦。" }, { english: "So bright.", chinese: "真亮。" }], tip: "阳台观赏" },
+  { scene: "亲吻", icon: "💋", words: ["Kiss /kɪs/", "Love /lʌv/"], dialogs: [{ english: "Give a kiss.", chinese: "亲一个。" }, { english: "I love you.", chinese: "我爱你。" }], tip: "情感互动" },
+  { scene: "喝果汁", icon: "🧃", words: ["Juice /dʒuːs/", "Sweet /swiːt/"], dialogs: [{ english: "Drink the juice.", chinese: "喝果汁。" }, { english: "Sweet taste.", chinese: "甜甜的。" }], tip: "控制用量" },
+  { scene: "玩玩偶", icon: "🧸", words: ["Doll /dɒl/", "Hug /hʌɡ/"], dialogs: [{ english: "Hold the doll.", chinese: "抱玩偶。" }, { english: "Soft friend.", chinese: "软软的朋友。" }], tip: "练习拥抱" },
+  { scene: "读诗歌", icon: "📜", words: ["Poem /'pəʊɪm/", "Read /riːd/"], dialogs: [{ english: "Read a poem.", chinese: "读首诗。" }, { english: "So beautiful.", chinese: "真优美。" }], tip: "语调模仿" },
 
-  // 阶段 2: 户外与探索 (Day 11-20)
+  // Month 2: 户外与自然 (Days 31-60)
   { scene: "去公园", icon: "🌳", words: ["Park /pɑːk/", "Tree /triː/"], dialogs: [{ english: "Go to the park.", chinese: "去公园。" }, { english: "See the tree.", chinese: "看树。" }], tip: "观察大自然" },
   { scene: "天气预报", icon: "☁️", words: ["Weather /'weðər/", "Sunny /'sʌni/"], dialogs: [{ english: "How's the weather?", chinese: "天气怎么样？" }, { english: "It's sunny.", chinese: "阳光灿烂。" }], tip: "指指窗外" },
   { scene: "滑滑梯", icon: "🛝", words: ["Slide /slaɪd/", "Down /daʊn/"], dialogs: [{ english: "Go down the slide.", chinese: "滑滑梯。" }, { english: "So fun!", chinese: "太好玩啦！" }], tip: "排队滑滑梯" },
@@ -23,8 +43,28 @@ const MASTER_SCHEDULE = [
   { scene: "草地上走", icon: "🌿", words: ["Grass /ɡrɑːs/", "Walk /wɔːk/"], dialogs: [{ english: "Walk on grass.", chinese: "草地上走。" }, { english: "Soft grass.", chinese: "软软的草。" }], tip: "脱鞋感受" },
   { scene: "荡秋千", icon: "🪑", words: ["Swing /swɪŋ/", "Up /ʌp/"], dialogs: [{ english: "Swing up high.", chinese: "荡高高。" }, { english: "Push me!", chinese: "推我！" }], tip: "注意安全" },
   { scene: "回家", icon: "🏠", words: ["Home /həʊm/", "Back /bæk/"], dialogs: [{ english: "Time to go home.", chinese: "该回家啦。" }, { english: "Sweet home.", chinese: "温暖的家。" }], tip: "整理背包" },
+  { scene: "看花朵", icon: "🌸", words: ["Flower /'flaʊər/", "Smell /smel/"], dialogs: [{ english: "Smell the flower.", chinese: "闻闻花香。" }, { english: "Pretty flower.", chinese: "漂亮的花。" }], tip: "轻闻花朵" },
+  { scene: "看云彩", icon: "☁️", words: ["Cloud /klaʊd/", "White /waɪt/"], dialogs: [{ english: "Look at the cloud.", chinese: "看白云。" }, { english: "It's white.", chinese: "它是白色的。" }], tip: "辨认形状" },
+  { scene: "捉虫子", icon: "🐞", words: ["Bug /bʌɡ/", "Small /smɔːl/"], dialogs: [{ english: "A small bug.", chinese: "小虫子。" }, { english: "Don't touch.", chinese: "别碰它。" }], tip: "观察安全" },
+  { scene: "雨天", icon: "☔", words: ["Rain /reɪn/", "Umbrella /ʌm'brelə/"], dialogs: [{ english: "It is raining.", chinese: "下雨啦。" }, { english: "Take umbrella.", chinese: "带雨伞。" }], tip: "雨中漫步" },
+  { scene: "过马路", icon: "🚦", words: ["Stop /stɒp/", "Wait /weɪt/"], dialogs: [{ english: "Red light, stop.", chinese: "红灯停。" }, { english: "Wait for me.", chinese: "等我一下。" }], tip: "交通安全" },
+  { scene: "踢水花", icon: "💦", words: ["Puddle /'pʌdl/", "Splash /splæʃ/"], dialogs: [{ english: "Jump in puddle.", chinese: "跳进水坑。" }, { english: "Big splash!", chinese: "溅起水花！" }], tip: "穿雨靴" },
+  { scene: "骑三轮车", icon: "🚲", words: ["Bike /baɪk/", "Fast /fɑːst/"], dialogs: [{ english: "Ride the bike.", chinese: "骑车。" }, { english: "Go fast.", chinese: "快点儿。" }], tip: "注意平衡" },
+  { scene: "沙滩游戏", icon: "🏖️", words: ["Sand /sænd/", "Castle /'kɑːsl/"], dialogs: [{ english: "Dig the sand.", chinese: "挖沙子。" }, { english: "Sand castle.", chinese: "沙堡。" }], tip: "带铲子" },
+  { scene: "捡树叶", icon: "🍂", words: ["Leaf /liːf/", "Yellow /'jeləʊ/"], dialogs: [{ english: "Pick a leaf.", chinese: "捡树叶。" }, { english: "It's yellow.", chinese: "它是黄色的。" }], tip: "收集落叶" },
+  { scene: "认识邻居", icon: "👋", words: ["Hello /he'ləʊ/", "Neighbor /'neɪbər/"], dialogs: [{ english: "Say hello.", chinese: "打个招呼。" }, { english: "My neighbor.", chinese: "我的邻居。" }], tip: "练习礼貌" },
+  { scene: "喂鸽子", icon: "🐦", words: ["Feed /fiːd/", "Bird /bɜːrd/"], dialogs: [{ english: "Feed the bird.", chinese: "喂小鸟。" }, { english: "They are hungry.", chinese: "它们饿了。" }], tip: "食物投放" },
+  { scene: "看星星", icon: "✨", words: ["Star /stɑːr/", "Twinkle /'twɪŋkl/"], dialogs: [{ english: "See the star.", chinese: "看星星。" }, { english: "Twinkle light.", chinese: "闪闪发光。" }], tip: "寻找亮星" },
+  { scene: "玩风车", icon: "🌀", words: ["Wind /wɪnd/", "Spin /spɪn/"], dialogs: [{ english: "Wind is blowing.", chinese: "风在吹。" }, { english: "Spinning fast.", chinese: "转得好快。" }], tip: "感受风力" },
+  { scene: "找影子", icon: "👤", words: ["Shadow /'ʃædəʊ/", "Sun /sʌn/"], dialogs: [{ english: "Look, my shadow.", chinese: "看，我的影子。" }, { english: "Follow me.", chinese: "跟着我。" }], tip: "玩影子游戏" },
+  { scene: "看彩虹", icon: "🌈", words: ["Rainbow /'reɪnbəʊ/", "Color /'kʌlər/"], dialogs: [{ english: "Look, rainbow!", chinese: "看，彩虹！" }, { english: "So many colors.", chinese: "好多颜色。" }], tip: "寻找七彩" },
+  { scene: "野餐", icon: "🧺", words: ["Picnic /'pɪknɪk/", "Eat /iːt/"], dialogs: [{ english: "Have a picnic.", chinese: "野餐。" }, { english: "Let's eat out.", chinese: "外面吃。" }], tip: "铺好餐垫" },
+  { scene: "闻草地", icon: "🌾", words: ["Smell /smel/", "Fresh /freʃ/"], dialogs: [{ english: "Smell the grass.", chinese: "闻闻青草。" }, { english: "Fresh air.", chinese: "清新的空气。" }], tip: "深呼吸" },
+  { scene: "玩水枪", icon: "🔫", words: ["Water /'wɔːtər/", "Shoot /ʃuːt/"], dialogs: [{ english: "Shoot water.", chinese: "喷水。" }, { english: "Watch out!", chinese: "小心！" }], tip: "游戏防守" },
+  { scene: "看蝴蝶", icon: "🦋", words: ["Butterfly /'bʌtəflaɪ/", "Fly /flaɪ/"], dialogs: [{ english: "Pretty butterfly.", chinese: "漂亮蝴蝶。" }, { english: "Fly away.", chinese: "飞走啦。" }], tip: "静静观看" },
+  { scene: "看直升机", icon: "🚁", words: ["Fly /flaɪ/", "Up /ʌp/"], dialogs: [{ english: "Fly high.", chinese: "飞得高。" }, { english: "Helicopter.", chinese: "直升机。" }], tip: "仰望天空" },
 
-  // 阶段 3: 情感与日常需求 (Day 21-30)
+  // Month 3: 情感与互动 (Days 61-90)
   { scene: "肚子饿", icon: "😋", words: ["Hungry /'hʌŋɡri/", "Food /fuːd/"], dialogs: [{ english: "I am hungry.", chinese: "我饿了。" }, { english: "What to eat?", chinese: "吃什么？" }], tip: "表达需求" },
   { scene: "要喝水", icon: "💧", words: ["Thirsty /'θɜːsti/", "Water /'wɔːtər/"], dialogs: [{ english: "I am thirsty.", chinese: "我渴了。" }, { english: "Drink water.", chinese: "喝水。" }], tip: "自主拿水杯" },
   { scene: "上厕所", icon: "🚽", words: ["Potty /'pɒti/", "Toilet /'tɔɪlət/"], dialogs: [{ english: "I need potty.", chinese: "要上厕所。" }, { english: "Go please.", chinese: "请去吧。" }], tip: "及时引导" },
@@ -34,7 +74,27 @@ const MASTER_SCHEDULE = [
   { scene: "帮忙妈妈", icon: "💪", words: ["Help /help/", "Job /dʒɒb/"], dialogs: [{ english: "Let me help.", chinese: "我来帮忙。" }, { english: "Good job!", chinese: "做得好！" }], tip: "鼓励参与" },
   { scene: "好朋友", icon: "👫", words: ["Friend /frend/", "Play /pleɪ/"], dialogs: [{ english: "Play with me.", chinese: "和我玩。" }, { english: "My friend.", chinese: "我的朋友。" }], tip: "学会社交" },
   { scene: "说谢谢", icon: "🙏", words: ["Thank /θæŋk/", "Welcome /'welkəm/"], dialogs: [{ english: "Thank you.", chinese: "谢谢。" }, { english: "You're welcome.", chinese: "不客气。" }], tip: "礼貌用语" },
-  { scene: "说晚安", icon: "💤", words: ["Night /naɪt/", "Dream /driːm/"], dialogs: [{ english: "Sleep tight.", chinese: "睡个好觉。" }, { english: "See you tomorrow.", chinese: "明天见。" }], tip: "睡前仪式" }
+  { scene: "说晚安", icon: "💤", words: ["Night /naɪt/", "Dream /driːm/"], dialogs: [{ english: "Sleep tight.", chinese: "睡个好觉。" }, { english: "See you tomorrow.", chinese: "明天见。" }], tip: "睡前仪式" },
+  { scene: "想睡觉", icon: "🥱", words: ["Tired /'taɪərd/", "Rest /rest/"], dialogs: [{ english: "I'm so tired.", chinese: "我很累。" }, { english: "Take a rest.", chinese: "休息下。" }], tip: "午休准备" },
+  { scene: "看电视", icon: "📺", words: ["TV /tiː'viː/", "Watch /wɒtʃ/"], dialogs: [{ english: "Watch TV.", chinese: "看电视。" }, { english: "Sit down.", chinese: "坐下。" }], tip: "控制时长" },
+  { scene: "画圆圈", icon: "⭕", words: ["Circle /'sɜːkl/", "Draw /drɔː/"], dialogs: [{ english: "Draw a circle.", chinese: "画圆。" }, { english: "So round.", chinese: "好圆。" }], tip: "图形认知" },
+  { scene: "大笑", icon: "😂", words: ["Laugh /lɑːf/", "Funny /'fʌni/"], dialogs: [{ english: "What's funny?", chinese: "什么事好笑？" }, { english: "You laugh.", chinese: "你在笑。" }], tip: "传递快乐" },
+  { scene: "生气", icon: "😡", words: ["Angry /'æŋɡri/", "Calm /kɑːm/"], dialogs: [{ english: "Don't be angry.", chinese: "别生气。" }, { english: "Keep calm.", chinese: "冷静点。" }], tip: "情绪疏导" },
+  { scene: "洗脚", icon: "🦶", words: ["Feet /fiːt/", "Wash /wɒʃ/"], dialogs: [{ english: "Wash your feet.", chinese: "洗脚。" }, { english: "Clean feet.", chinese: "干净的脚。" }], tip: "睡前清洁" },
+  { scene: "看书架", icon: "📚", words: ["Shelf /ʃelf/", "Many /'meni/"], dialogs: [{ english: "So many books.", chinese: "好多书。" }, { english: "On the shelf.", chinese: "在书架上。" }], tip: "培养阅读" },
+  { scene: "帮妈妈拿东西", icon: "🤲", words: ["Hand /hænd/", "Give /ɡɪv/"], dialogs: [{ english: "Hand it to me.", chinese: "拿给我。" }, { english: "Here you are.", chinese: "给你。" }], tip: "练习给与" },
+  { scene: "打电话", icon: "📞", words: ["Call /kɔːl/", "Hello /he'ləʊ/"], dialogs: [{ english: "Call grandma.", chinese: "给奶奶打电话。" }, { english: "Say hello.", chinese: "说你好。" }], tip: "视频通话" },
+  { scene: "听音乐", icon: "🎵", words: ["Music /'mjuːzɪk/", "Dance /dɑːns/"], dialogs: [{ english: "Listen to music.", chinese: "听音乐。" }, { english: "Let's dance.", chinese: "跳舞吧。" }], tip: "互动摇摆" },
+  { scene: "叠衣服", icon: "🧺", words: ["Fold /fəʊld/", "Clean /kliːn/"], dialogs: [{ english: "Fold the shirt.", chinese: "叠衣服。" }, { english: "So neat.", chinese: "真整齐。" }], tip: "生活小帮手" },
+  { scene: "找袜子", icon: "🧦", words: ["Socks /sɒks/", "Find /faɪnd/"], dialogs: [{ english: "Find the socks.", chinese: "找袜子。" }, { english: "Where are they?", chinese: "它们在哪？" }], tip: "配对练习" },
+  { scene: "洗苹果", icon: "🍎", words: ["Wash /wɒʃ/", "Fruit /fruːt/"], dialogs: [{ english: "Wash the fruit.", chinese: "洗水果。" }, { english: "Eat healthy.", chinese: "吃得健康。" }], tip: "饮食卫生" },
+  { scene: "照镜子整理", icon: "🪞", words: ["Neat /niːt/", "Nice /naɪs/"], dialogs: [{ english: "Look neat.", chinese: "看起来很整齐。" }, { english: "You look nice.", chinese: "你真好看。" }], tip: "自我欣赏" },
+  { scene: "告别", icon: "👋", words: ["Bye /baɪ/", "Again /ə'ɡen/"], dialogs: [{ english: "Bye-bye.", chinese: "再见。" }, { english: "See you again.", chinese: "再见。" }], tip: "挥手习惯" },
+  { scene: "数手指", icon: "🖐️", words: ["Finger /'fɪŋɡər/", "Five /faɪv/"], dialogs: [{ english: "One, two, three.", chinese: "一二三。" }, { english: "Five fingers.", chinese: "五个手指。" }], tip: "身体认知" },
+  { scene: "看日历", icon: "🗓️", words: ["Date /deɪt/", "Today /tə'deɪ/"], dialogs: [{ english: "What is today?", chinese: "今天是几号？" }, { english: "Mark the date.", chinese: "标记日期。" }], tip: "认知时间" },
+  { scene: "拥抱鼓励", icon: "🫂", words: ["Hug /hʌɡ/", "Brave /breɪv/"], dialogs: [{ english: "Be brave.", chinese: "勇敢点。" }, { english: "A big hug.", chinese: "一个大大的拥抱。" }], tip: "勇气加持" },
+  { scene: "分享秘密", icon: "🤫", words: ["Secret /'siːkrət/", "Shh /ʃ/"], dialogs: [{ english: "It's a secret.", chinese: "这是秘密。" }, { english: "Don't tell.", chinese: "别说出去。" }], tip: "趣味对话" },
+  { scene: "一起看书", icon: "📖", words: ["Together /tə'geðər/", "Story /'stɔːri/"], dialogs: [{ english: "Read together.", chinese: "一起读书。" }, { english: "A long story.", chinese: "长长的故事。" }], tip: "亲子陪伴" }
 ];
 
 const curriculumLibrary = MASTER_SCHEDULE;
