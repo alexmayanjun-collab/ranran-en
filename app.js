@@ -1,14 +1,3 @@
-// ===== Scene config =====
-const sceneConfig = {
-  "早上见面": { icon: "☀️", desc: "和家人打招呼，开启美好的一天" },
-  "出门":     { icon: "👟", desc: "背上小书包，出发去探索世界" },
-  "吃饭":     { icon: "🍚", desc: "和家人一起享用美味的饭菜" },
-  "谢谢":     { icon: "💜", desc: "学会感恩，表达心中的谢意" },
-  "道歉":     { icon: "🌈", desc: "勇敢说对不起，和好如初" },
-  "赞美":     { icon: "⭐", desc: "发现别人的闪光点，给予鼓励" },
-  "晚安":     { icon: "🌙", desc: "温柔的晚安，做个甜甜的梦" }
-};
-
 // ===== All dates in data sorted =====
 const allDates = Object.keys(englishData).sort();
 
@@ -41,7 +30,6 @@ function renderSidebar() {
 
   allDates.forEach(dateKey => {
     const d = englishData[dateKey];
-    const cfg = sceneConfig[d.scene] || { icon: "📝" };
     const isActive = dateKey === currentDate;
     const saved = localStorage.getItem('english-check-' + dateKey);
     const isCompleted = saved ? JSON.parse(saved).every(v => v) : false;
@@ -51,7 +39,7 @@ function renderSidebar() {
     item.onclick = () => switchDate(dateKey);
 
     item.innerHTML = `
-      <div class="day-dot">${cfg.icon}</div>
+      <div class="day-dot">${d.icon}</div>
       <div class="day-info">
         <div class="day-name">${d.weekday} · ${d.scene}</div>
         <div class="day-scene">${dateKey}</div>
@@ -81,7 +69,6 @@ function renderMobileDatePicker() {
   // Render dropdown items
   dropdown.innerHTML = allDates.map(dateKey => {
     const d = englishData[dateKey];
-    const cfg = sceneConfig[d.scene] || { icon: "📝" };
     const isActive = dateKey === currentDate;
     const saved = localStorage.getItem('english-check-' + dateKey);
     const isCompleted = saved ? JSON.parse(saved).every(v => v) : false;
@@ -91,7 +78,7 @@ function renderMobileDatePicker() {
 
     return `
       <button class="${classes.join(' ')}" onclick="switchDate('${dateKey}'); closeDatePicker();">
-        <div class="dp-dot">${cfg.icon}</div>
+        <div class="dp-dot">${d.icon}</div>
         <div class="dp-info">
           <div class="dp-name">${d.weekday} · ${d.scene}</div>
           <div class="dp-scene">${dateKey}</div>
@@ -142,17 +129,15 @@ function renderContent() {
     return;
   }
 
-  const cfg = sceneConfig[data.scene] || { icon: "📝", desc: "" };
-
   // Top bar
   document.getElementById('dateText').textContent = `${data.date} ${data.weekday}`;
-  document.getElementById('sceneIcon').textContent = cfg.icon;
+  document.getElementById('sceneIcon').textContent = data.icon;
   document.getElementById('sceneText').textContent = `今日场景：${data.scene}`;
 
   // Hero
-  document.getElementById('heroIcon').textContent = cfg.icon;
+  document.getElementById('heroIcon').textContent = data.icon;
   document.getElementById('heroTitle').textContent = data.scene;
-  document.getElementById('heroDesc').textContent = cfg.desc;
+  document.getElementById('heroDesc').textContent = data.desc;
 
   // Words
   const wordsEl = document.getElementById('wordsList');
@@ -301,3 +286,4 @@ document.addEventListener('DOMContentLoaded', () => {
   renderContent();
   initDatePickerOutsideClick();
 });
+`,file_path:
