@@ -255,6 +255,7 @@ function updateProgress() {
 function switchDate(dateKey) {
   currentDate = dateKey;
   window.location.hash = dateKey;
+  localStorage.setItem('english-current-date', currentDate);
   // Reset check UI
   document.getElementById('check-read').classList.remove('checked');
   document.getElementById('checkbox-read').textContent = '';
@@ -273,11 +274,12 @@ function switchDate(dateKey) {
 
 // ===== Init =====
 document.addEventListener('DOMContentLoaded', () => {
-  // Check hash for date override
+  // Check hash for date override, and persist it
   if (window.location.hash) {
     const hashDate = window.location.hash.slice(1);
     if (englishData[hashDate]) {
       currentDate = hashDate;
+      localStorage.setItem('english-current-date', currentDate);
     }
   }
 

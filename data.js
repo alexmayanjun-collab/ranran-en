@@ -1,5 +1,12 @@
-// 90天学习计划生成器 (固定路径模式)
-const startDate = "2026-05-07";
+// 90天学习计划生成器 (动态日期模式)
+// 优先使用 localStorage 保存的日期，其次用今天，兜底用写死的起始日
+const startDate = (() => {
+  const saved = localStorage.getItem('english-current-date');
+  if (saved && englishData[saved]) return saved;
+  const today = new Date().toISOString().slice(0, 10);
+  if (englishData[today]) return today;
+  return "2026-05-07"; // 兜底：第一个可用日期
+})();
 
 function generateLearningPlan() {
   const plan = {};
